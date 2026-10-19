@@ -1,0 +1,6 @@
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true },
+  email: { type: String, required: true, index: true } // Index created here!
+});
+MongoDB creates a hidden, sorted list of all the emails in the background. It maps each email directly 
+to its exact location on the hard drive.
