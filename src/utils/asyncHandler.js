@@ -1,11 +1,11 @@
 //method 1 - through promises
 const asyncHandler = (requestHandler) => {
     //JS mein promises ko strong bnao pehle fir syntax smjh aaega
-    (req, res, next) => {
+    return (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))
     }
 }
-
+//yahan higher order function h mtlb function bhej rhe ho toh return bhi function hi kroge isliye yahah return krna zaroori h
 export {asyncHandler}
 
 

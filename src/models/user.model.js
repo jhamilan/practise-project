@@ -48,9 +48,11 @@ userSchema.pre("save", async function (next) {
 
     if (!this.isModified("password")) return next()
         // ye condition taki ye puri cheez bs password ke modify hone pe hi change ho
-    this.password = bcrypt.hash(this.password, 10)
+
+    this.password = await bcrypt.hash(this.password, 10)
     //hash ek method h and iske parameters mein pehla jisko hash krna h, aur dusra 10 - rounds h ya salts
     next()
+    
 })
 //yahan pe save is operation jiske liye hook chalna hai, and ye callback deta h ye hook but we can not use arrow function 
 //bcoz arrow function mein this krke hum reference nhi le skte, isliye use function(){}

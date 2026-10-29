@@ -1,6 +1,7 @@
 //ye humne database connect krne ke dusre approach ke liye bnaya h file
 import mongoose from "mongoose";
 import { DB_NAME } from "../constants";
+import { app } from "../app.js";
 
 const ConnectDB =  async () => {
     try {
